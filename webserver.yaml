@@ -1,0 +1,6 @@
+- hosts: test
+  become: yes
+  tasks:
+  - package: name=httpd
+  - copy: index.html /var/www/html/index.html
+  - service: name=httpd state=started
